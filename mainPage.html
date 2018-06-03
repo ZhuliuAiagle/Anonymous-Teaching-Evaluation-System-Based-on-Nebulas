@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/form-elements.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="\bootstrap-select-1.12.4\bootstrap-select-1.12.4\dist\css\bootstrap-select.css">
+
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- Favicon and touch icons -->
+<link rel="shortcut icon" href="assets/ico/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+</head>
+
+<body>
+
+        <div class="navbar navbar-default">
+                <!-- 导航条标题-->
+            <div class="container">
+            <div class="navbar-header nav-title">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="margin-top: 0.7cm">  
+                            <span class="sr-only">Toggle navigation</span>  
+                            <span class="icon-bar"></span>  
+                            <span class="icon-bar"></span>  
+                            <span class="icon-bar"></span>  
+                   </button>  
+
+                <a class="navbar-brand" style="margin-top: 0.5cm">Nebula™高校匿名教评系统</a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-right is-collapse">  
+                    <div class="navbar-form navbar-right" role="search-box" style="margin-top: 0.4cm">
+                            <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="搜索" id="keyword">
+                            </div>
+                            <a class="btn btn-link-1 launch-modal" onclick="SearchTeacher()" id="sear">
+                                搜索
+                            </a>
+                        </div>
+                    </div>
+            </div> 　    
+        </div>
+
+            
+
+
+        <div class="container" style="margin-top: 1cm">
+                <div class="jumbotron">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h1 id = "name"><div id="realname">N/A</div><br>
+                            N/A</h1>
+                            <br>
+                            <p id="college">N/A</p>
+                            <a class="btn btn-link-1 launch-modal" href="#" data-modal-id="modal-register">评分</a>
+                        </div>
+                        <br>
+                        <div class="col-md-6">
+                            <p>开设课程</p>
+                            <div class = "row">
+                                <div class="col-md-12" > 
+                                    <ul class="list-group" id = "courses">
+                                            <li class="list-group-item" align="justify">N/A</li>
+                                            <li class="list-group-item"  align="justify">N/A</li>
+                                            <li class="list-group-item"  align="justify">N/A</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        
+                
+                </div>   
+                
+                
+
+
+
+
+
+
+
+                <div class="modal fade" id="modal-register" tabindex="-1" role="dialog" aria-labelledby="modal-register-label" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">
+                                        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                                    </button>
+                                    <h3 class="modal-title" id="modal-register-label">添加评论</h3>
+                                    <p>请客观公正，如实评论</p>
+                                </div>
+                                
+                                <div class="modal-body">
+                                    
+                                    <form role="form" action="" method="post" class="registration-form" onsubmit="return false;">
+                                        <div class="form-group">
+                                            <label class="sr-only" for="form-first-name"></label>
+                                            <input type="text" name="form-first-name" placeholder="请输入评论" class="form-first-name form-control" id="comments">
+                                        </div>
+                                        <div class="form-group" align="center">
+                                                <label class="sr-only" for="form-first-name"></label>
+                                                <select class="selectpicker" title = "请打分" id = "score">
+                                                        <option value ="10">10</option>
+                                                        <option value ="9">9</option>
+                                                        <option value="8">8</option>
+                                                        <option value="7">7</option>
+                                                        <option value="6">6</option>
+                                                        <option value="5">5</option>
+                                                        <option value="4">4</option>
+                                                        <option value="3">3</option>
+                                                        <option value="2">2</option>
+                                                        <option value="1">1</option>
+
+                                                </select>
+                                               
+                                        </div>
+
+                                        <button type="submit" class="btn" onclick="AddComment()">提交评论</button>
+                                    </form>
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+        <div id = "ExistComments">
+
+
+        </div>
+
+            
+
+
+        
+        
+
+        
+
+
+
+        
+
+        
+
+<!-- Javascript -->
+<script src="assets/js/jquery-1.11.1.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.backstretch.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script src="bundle.js"></script>
+<script src="\bootstrap-select-1.12.4\bootstrap-select-1.12.4\js\bootstrap-select.js"></script>
+
+
+
+<!--[if lt IE 10]>
+	<script src="assets/js/placeholder.js"></script>
+<![endif]-->
+
+</body>
+</html>
